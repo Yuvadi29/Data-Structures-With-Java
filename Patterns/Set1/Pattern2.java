@@ -1,3 +1,4 @@
+package Set1;
 /*Simple Star Pattern with equal rows and columns is printed here 
  1 1 1
  2 2 2 

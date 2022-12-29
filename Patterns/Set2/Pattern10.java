@@ -1,3 +1,4 @@
+package Set2;
 /*Simple Star Pattern with triangular pattern 
 1
 2 1

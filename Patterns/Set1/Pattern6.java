@@ -1,3 +1,4 @@
+package Set1;
 import java.util.Scanner;
 
 /*Simple Star Pattern with equal rows and columns is printed here 

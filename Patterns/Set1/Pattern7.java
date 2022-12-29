@@ -1,30 +1,25 @@
+package Set1;
 /*Simple Star Pattern with equal rows and columns is printed here 
 1
-2 3
-4 5 6
-7 8 9 10
+2 2
+3 3 3
+4 4 4 4
 */
+
 import java.util.*;
 
-class Pattern8{
-
+class Pattern7 {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
 
         System.out.print("Enter the number of rows: ");
         int n = sc.nextInt();
 
-        int i = 1;
-        int count = 1;
-        while (i<=n) {
-            int j = 1;
-            while (j<=i) {
-                System.out.print(count + " ");
-                j++;
-                count++;
+        for (int i = 1; i <= n; i++) {
+            for (int j = 1; j <= i; j++) {
+                System.out.print(i + " ");
             }
             System.out.println();
-            i++;
         }
     }
 }
