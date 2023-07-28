@@ -22,7 +22,48 @@ import java.util.*;
 
 class RotateArrayRight {
 
-    
+    public static void rotate(int[] nums, int k) {
+        // initialize the variables n and k, where n is the size of the input vector
+        // nums, and k is the number of positions to rotate.
+        int n = nums.length;
+        k = k % n;
+
+        // k is 0, n is 0, or n is equal to k, we return early as no rotation is needed.
+        if (k == 0 || n == 0 || n == k) {
+            return;
+        }
+
+        // Initialise count, start, current and previous variables
+        int count = 0;
+        int start = 0;
+        int current = start;
+        int prev = nums[start];
+
+        // We enter a loop that continues until all elements have been moved to their
+        // correct positions. Inside the loop:
+        // We calculate the new index current by adding k to the current index and
+        // taking the modulus of n to handle wraparound.
+        // We swap the value at the current index current with the value in prev.
+        // We update prev to the value that was previously at the current index.
+        // We increment the count.
+        // If the current index becomes equal to the start index, it means that we have
+        // completed a rotation cycle. We increment start, update current and prev to
+        // the new values, and continue the rotation process until all elements have
+        // been moved.
+        while (count < n) {
+            current = (current + k) % n;
+            int temp = nums[current];
+            nums[current] = prev;
+            prev = temp;
+            count++;
+
+            if (current == start) {
+                start++;
+                current = start;
+                prev = nums[start];
+            }
+        }
+    }
 
     public static void main(String[] args) {
         int[] nums = { 1, 2, 3, 4, 5, 6 };
