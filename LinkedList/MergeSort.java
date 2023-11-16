@@ -3,7 +3,6 @@
  * Create a new Node which points to null
  * Iterate through both the Lists and then compare 
  * Put the smaller one in the new List
- * 
 */
 
 public class MergeSort {

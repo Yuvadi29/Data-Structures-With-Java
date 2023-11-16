@@ -1,7 +1,5 @@
 /*Basic on the LinkedList */
 
-package LinkedList;
-
 import java.util.LinkedList;
 
 public class Introduction {
