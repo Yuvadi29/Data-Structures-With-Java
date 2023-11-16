@@ -13,7 +13,7 @@ public class LinkedListCycle2 {
 
         Node(int x) {
             this.val = x;
-        }
+        }   
     }
 
     public Node detectCycle(Node head) {
