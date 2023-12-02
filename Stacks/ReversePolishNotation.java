@@ -42,7 +42,7 @@ public class ReversePolishNotation {
             return false;
         }
     }
-        
+
     private int evaluateExpression(int oper1, int oper2, String operator) {
         switch (operator) {
             case "+":
