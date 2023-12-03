@@ -14,7 +14,7 @@ public class AddatBeginDoublyLL {
         }
     }
 
-    public static addtoStart(DoublyLinkedList head, int data){
+    public static addtoStart(DoublyLinkedList head,int data){
         DoublyLinkedList newNode = new DoublyLinkedList(data);
 
         // Make next of new node as head and prev as null
