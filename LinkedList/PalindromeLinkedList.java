@@ -14,22 +14,6 @@ public class PalindromeLinkedList {
         }
     }
 
-    // Get the last Node
-    public Node getLastNode(Node head) {
-        if (head == null) {
-            return null;
-        }
-
-        Node current = head;
-
-        while (current.next != null) {
-            current = current.next;
-        }
-
-        return current;
-    }
-
-    // Reverse a linked list
     public Node reverseLinkedList(Node head) {
         Node prev = null;
         Node current = head;
@@ -46,23 +30,37 @@ public class PalindromeLinkedList {
     }
 
     public boolean isPalindrome(Node head) {
-        if (head == null) {
-            return false;
+        if (head == null || head.next == null) {
+            return true;
         }
 
-        // Create a reversed copy of the linked list
-        Node reversed = reverseLinkedList(head);
+        // Find the middle of the linked list using slow and fast pointers
+        Node slow = head;
+        Node fast = head;
 
-        // Compare the original and reversed linked lists
-        while (head != null && reversed != null) {
-            if (head.val != reversed.val) {
+        while (fast != null && fast.next != null) {
+            slow = slow.next;
+            fast = fast.next.next;
+        }
+
+        // Reverse the second half of the list
+        Node reversedHead = reverseLinkedList(slow);
+
+        // Compare the first half and the reversed second half
+        Node firstHalfPointer = head;
+        Node secondHalfPointer = reversedHead;
+
+        while (secondHalfPointer != null) {
+            if (firstHalfPointer.val != secondHalfPointer.val) {
                 return false;
             }
-            head = head.next;
-            reversed = reversed.next;
+            firstHalfPointer = firstHalfPointer.next;
+            secondHalfPointer = secondHalfPointer.next;
         }
 
-        // If both linked lists match, it's a palindrome
+        // Optional: restore the original list (if needed)
+        // reverseLinkedList(reversedHead);
+
         return true;
     }
 }
